@@ -12,18 +12,22 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowIcon(QIcon(tr(":/images/WeinberyMulticouple.png")));
 
     createStatusBar();
+
+    statusInfo = new QLabel(tr("1.43GB | 3.406GB"));
+    statusInfo->setMinimumSize(250, 20); // 设置标签最小大小
+    statusInfo->setFrameShape(QFrame::NoFrame); // 设置标签形状
+    statusInfo->setFrameShadow(QFrame::Plain); // 设置标签阴影 Raised Plain Sunken
+    statusInfo->setToolTip(tr("物理内存：1.43GB，虚拟内存：3.406GB"));
+    ui->statusBar->addPermanentWidget(statusInfo);
+
     progressBar = new QProgressBar;
     progressBar->setMinimum(0);
     progressBar->setMaximum(0);
-    progressBar->setMaximumWidth(150);
+    progressBar->setMaximumWidth(120);
     progressBar->setMaximumHeight(18);
-    progressBar->setValue(24);
+    //progressBar->setValue(24);
     ui->statusBar->addPermanentWidget(progressBar);
-    statusInfo = new QLabel(tr("物理内存：743MB，虚拟内存：1406MB"));
-    statusInfo->setMinimumSize(250, 20); // 设置标签最小大小
-    statusInfo->setFrameShape(QFrame::Panel); // 设置标签形状
-    statusInfo->setFrameShadow(QFrame::Sunken); // 设置标签阴影 Raised Plain Sunken
-    ui->statusBar->addPermanentWidget(statusInfo);
+
     createDockWindows();
 
     mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
