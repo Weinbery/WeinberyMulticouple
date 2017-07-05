@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <addaction name="action_NewProject"/>
+    <addaction name="action_OpenProject"/>
+    <addaction name="action_SaveProject"/>
+    <addaction name="action_PrintWindow"/>
+    <addaction name="separator"/>
+    <addaction name="action_ExitApplication"/>
+   </widget>
+   <widget class="QMenu" name="menu_E">
+    <property name="title">
+     <string>编辑(&amp;E)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_V">
+    <property name="title">
+     <string>视图(&amp;V)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>工具(&amp;T)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_W">
+    <property name="title">
+     <string>窗口(&amp;W)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="action_Manual"/>
+    <addaction name="action_About"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_E"/>
+   <addaction name="menu_V"/>
+   <addaction name="menu"/>
+   <addaction name="menu_W"/>
+   <addaction name="menu_H"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_NewProject"/>
+   <addaction name="action_OpenProject"/>
+   <addaction name="action_SaveProject"/>
+   <addaction name="action_PrintWindow"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="viceToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_StartOrStop"/>
+   <addaction name="action_ConnectServer"/>
+   <addaction name="action_DisconnectServer"/>
+   <addaction name="action_Parameter"/>
+   <addaction name="action_Curve"/>
+  </widget>
+  <widget class="QToolBar" name="exportToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Word"/>
+   <addaction name="action_Excel"/>
+   <addaction name="action_PDF"/>
+   <addaction name="action_Manual"/>
+   <addaction name="action_About"/>
+  </widget>
+  <widget class="QToolBar" name="workspaceToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="action_Back"/>
+   <addaction name="action_Forward"/>
+   <addaction name="action_Upper"/>
+   <addaction name="action_Lookup"/>
+  </widget>
+  <action name="action_NewProject">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(&amp;N)</string>
+   </property>
+   <property name="toolTip">
+    <string>新建</string>
+   </property>
+   <property name="statusTip">
+    <string>新建工程</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="action_OpenProject">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(&amp;O)</string>
+   </property>
+   <property name="toolTip">
+    <string>打开</string>
+   </property>
+   <property name="statusTip">
+    <string>打开工程</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_SaveProject">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>保存</string>
+   </property>
+   <property name="statusTip">
+    <string>保存工程</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_PrintWindow">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/print.png</normaloff>:/images/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>打印(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>打印</string>
+   </property>
+   <property name="statusTip">
+    <string>打印窗口</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_ExitApplication">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/cancel.png</normaloff>:/images/cancel.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出(&amp;X)</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+   <property name="statusTip">
+    <string>退出程序</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_Parameter">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/palette.png</normaloff>:/images/palette.png</iconset>
+   </property>
+   <property name="text">
+    <string>参数(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>参数</string>
+   </property>
+   <property name="statusTip">
+    <string>参数配置</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+  <action name="action_Curve">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/plot.png</normaloff>:/images/plot.png</iconset>
+   </property>
+   <property name="text">
+    <string>曲线(&amp;C)</string>
+   </property>
+   <property name="toolTip">
+    <string>曲线</string>
+   </property>
+   <property name="statusTip">
+    <string>曲线图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="action_ConnectServer">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/connect.png</normaloff>:/images/connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>连接(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>连接</string>
+   </property>
+   <property name="statusTip">
+    <string>连接服务器</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action_DisconnectServer">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/disconnect.png</normaloff>:/images/disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>断开(&amp;D)</string>
+   </property>
+   <property name="toolTip">
+    <string>断开</string>
+   </property>
+   <property name="statusTip">
+    <string>断开连接</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="action_Back">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/back.png</normaloff>:/images/back.png</iconset>
+   </property>
+   <property name="text">
+    <string>后退(&amp;B)</string>
+   </property>
+   <property name="toolTip">
+    <string>后退</string>
+   </property>
+   <property name="statusTip">
+    <string>后退</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="action_Forward">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/forward.png</normaloff>:/images/forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>前进(&amp;F)</string>
+   </property>
+   <property name="toolTip">
+    <string>前进</string>
+   </property>
+   <property name="statusTip">
+    <string>前进</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="action_Upper">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/undo.png</normaloff>:/images/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>上一级(&amp;U)</string>
+   </property>
+   <property name="toolTip">
+    <string>上一级</string>
+   </property>
+   <property name="statusTip">
+    <string>上一级</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="action_Lookup">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/folder.png</normaloff>:/images/folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>浏览(&amp;L)</string>
+   </property>
+   <property name="toolTip">
+    <string>浏览</string>
+   </property>
+   <property name="statusTip">
+    <string>浏览</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="action_PDF">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/pdf.png</normaloff>:/images/pdf.png</iconset>
+   </property>
+   <property name="text">
+    <string>PDF(&amp;P)</string>
+   </property>
+   <property name="toolTip">
+    <string>导出PDF</string>
+   </property>
+   <property name="statusTip">
+    <string>导出PDF</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+P</string>
+   </property>
+  </action>
+  <action name="action_Word">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/word.png</normaloff>:/images/word.png</iconset>
+   </property>
+   <property name="text">
+    <string>Word(&amp;W)</string>
+   </property>
+   <property name="toolTip">
+    <string>导出Word</string>
+   </property>
+   <property name="statusTip">
+    <string>导出Word</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="action_Excel">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/excel.png</normaloff>:/images/excel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Excel(&amp;E)</string>
+   </property>
+   <property name="toolTip">
+    <string>导出Excel</string>
+   </property>
+   <property name="statusTip">
+    <string>导出Excel</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_StartOrStop">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/start.png</normaloff>:/images/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>开始(&amp;S)</string>
+   </property>
+   <property name="toolTip">
+    <string>开始</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_Manual">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/manual.png</normaloff>:/images/manual.png</iconset>
+   </property>
+   <property name="text">
+    <string>手册(&amp;M)</string>
+   </property>
+   <property name="toolTip">
+    <string>手册</string>
+   </property>
+   <property name="statusTip">
+    <string>手册</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/about.png</normaloff>:/images/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于(&amp;A)</string>
+   </property>
+   <property name="toolTip">
+    <string>关于</string>
+   </property>
+   <property name="statusTip">
+    <string>关于</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
